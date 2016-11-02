@@ -8,7 +8,7 @@
 
 - name: Create Future Java Directory
   file:
-    path: /usr/java
+    path: /usr/lib/jvm
     state: directory
   when: java_type == "Oracle"
 
@@ -25,7 +25,16 @@
   unarchive:
     remote_src: yes
     src: "{{ java_tmp_storage }}/{{ __java_oracle_8_tar }}"
-    dest: /usr/java
+    dest: /usr/lib/jvm
+  when:
+    - java_type == "Oracle"
+    - java_version == "8"
+
+- name: Create a Link For Java 8 Default
+  file:
+    state: link
+    dest: /usr/lib/jvm/default-java
+    src: "/usr/java/{{ __java_oracle_8_directory }}"
   when:
     - java_type == "Oracle"
     - java_version == "8"
@@ -43,10 +52,33 @@
   unarchive:
     remote_src: yes
     src: "{{ java_tmp_storage }}/{{ __java_oracle_7_tar }}"
-    dest: /usr/java
+    dest: /usr/lib/jvm
   when:
     - java_type == "Oracle"
     - java_version == "7"
+
+- name: Create a Link For Java 7 Default
+  file:
+    state: link
+    dest: /usr/lib/jvm/default-java
+    src: "/usr/lib/jvm/{{ __java_oracle_7_directory }}"
+  when:
+    - java_type == "Oracle"
+    - java_version == "7"
+
+- name: Create Links to Bin Directory for Java
+  file:
+    state: link
+    follow: yes
+    dest: "/usr/bin/{{ item }}"
+    src: "/usr/lib/jvm/default-java/bin/{{ item }}"
+  with_items:
+    - java
+    - javaws
+    - jcontrol
+    - javac
+    - jar
+    - javadoc
 
 - name: Install Open Java
   apt:
