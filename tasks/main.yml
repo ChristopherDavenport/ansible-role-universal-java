@@ -23,6 +23,7 @@
 - name: Check for Java
   command: /usr/bin/find / -name "java"
   register: __java_find
+  ignore_errors: True
   changed_when: False
 
 - debug: var=__java_find
