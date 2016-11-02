@@ -1,2 +1,13 @@
 ---
 # defaults file for universal-java
+
+# Java Type
+# Options are Open or Oracle
+java_type: Open
+
+# Which version of Java 7 or 8
+# This is a String Of The Primary Version Number
+java_version: "8"
+
+# Temporary Storage Of Installation Files
+java_tmp_storage: /tmp/java_install

@@ -1,0 +1,41 @@
+---
+
+- name: Download Oracle Java 8 RPM
+  get_url:
+    url: "{{ __java_oracle_8_download }}"
+    headers: 'Cookie:oraclelicense=accept-secure-backup-cookie'
+    dest: "{{ java_tmp_storage }}/{{ __java_oracle_8_rpm }}.rpm"
+  when:
+    - java_type == "Oracle"
+    - java_version == "8"
+
+- name: Install Oracle Java8
+  yum:
+    name: "{{ java_tmp_storage }}/{{ __java_oracle_8_rpm }}.rpm"
+    state: installed
+  when:
+    - java_type == "Oracle"
+    - java_version == "8"
+
+- name: Download Oracle Java 7 RPM
+  get_url:
+    url: "{{ __java_oracle_7_download }}"
+    headers: 'Cookie:oraclelicense=accept-secure-backup-cookie'
+    dest: "{{ java_tmp_storage }}/{{ __java_oracle_7_rpm }}.rpm"
+  when:
+    - java_type == "Oracle"
+    - java_version == "7"
+
+- name: Install Oracle Java 7
+  yum:
+    name: "{{ java_tmp_storage }}/{{ __java_oracle_7_rpm }}.rpm"
+    state: installed
+  when:
+    - java_type == "Oracle"
+    - java_version == "7"
+
+- name: Install Open Java
+  yum:
+    name: "{{ __java_open_package }}"
+    state: installed
+  when: java_type == "Open"
