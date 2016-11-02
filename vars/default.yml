@@ -11,4 +11,4 @@ __java_oracle_8_directory: jdk1.8.0_112
 __java_oracle_7_tar: jdk-7u79-linux-x64.tar.gz
 __java_oracle_8_tar: jdk-8u111-linux-x64.tar.gz
 
-__java_home_base: /usr/java/latest
+__java_home: /usr/java/latest
