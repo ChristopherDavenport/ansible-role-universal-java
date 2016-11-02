@@ -4,32 +4,143 @@ env:
   - distro: centos7
     init: /usr/lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    version: "7"
+    type: Open
   - distro: centos6
     init: /sbin/init
     run_opts: ""
+    version: "7"
+    type: Open
   - distro: ubuntu1604
     init: /lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    version: "7"
+    type: Open
   - distro: ubuntu1404
     init: /sbin/init
     run_opts: ""
+    version: "7"
+    type: Open
   - distro: ubuntu1204
     init: /sbin/init
     run_opts: ""
+    version: "7"
+    type: Open
   - distro: debian8
     init: /lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    version: "7"
+    type: Open
   - distro: fedora24
     init: /usr/lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-
-env:
-  - version: 7
-  - version: 8
-
-env:
-  - type: Open
-  - type: Oracle
+    version: "7"
+    type: Open
+  - distro: centos7
+    init: /usr/lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    version: "8"
+    type: Open
+  - distro: centos6
+    init: /sbin/init
+    run_opts: ""
+    version: "8"
+    type: Open
+  - distro: ubuntu1604
+    init: /lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    version: "8"
+    type: Open
+  - distro: ubuntu1404
+    init: /sbin/init
+    run_opts: ""
+    version: "8"
+    type: Open
+  - distro: ubuntu1204
+    init: /sbin/init
+    run_opts: ""
+    version: "8"
+    type: Open
+  - distro: debian8
+    init: /lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    version: "8"
+    type: Open
+  - distro: fedora24
+    init: /usr/lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    version: "8"
+    type: Open
+  - distro: centos7
+    init: /usr/lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    version: "7"
+    type: Oracle
+  - distro: centos6
+    init: /sbin/init
+    run_opts: ""
+    version: "7"
+    type: Oracle
+  - distro: ubuntu1604
+    init: /lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    version: "7"
+    type: Oracle
+  - distro: ubuntu1404
+    init: /sbin/init
+    run_opts: ""
+    version: "7"
+    type: Oracle
+  - distro: ubuntu1204
+    init: /sbin/init
+    run_opts: ""
+    version: "7"
+    type: Oracle
+  - distro: debian8
+    init: /lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    version: "7"
+    type: Oracle
+  - distro: fedora24
+    init: /usr/lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    version: "7"
+    type: Oracle
+  - distro: centos7
+    init: /usr/lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    version: "8"
+    type: Oracle
+  - distro: centos6
+    init: /sbin/init
+    run_opts: ""
+    version: "8"
+    type: Oracle
+  - distro: ubuntu1604
+    init: /lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    version: "8"
+    type: Oracle
+  - distro: ubuntu1404
+    init: /sbin/init
+    run_opts: ""
+    version: "8"
+    type: Oracle
+  - distro: ubuntu1204
+    init: /sbin/init
+    run_opts: ""
+    version: "8"
+    type: Oracle
+  - distro: debian8
+    init: /lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    version: "8"
+    type: Oracle
+  - distro: fedora24
+    init: /usr/lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    version: "8"
+    type: Oracle
 
 before_install:
   # Pull container.
