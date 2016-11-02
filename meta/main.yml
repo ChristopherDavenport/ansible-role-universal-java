@@ -44,8 +44,8 @@ galaxy_info:
   #  - 5.9
   #  - 6.0
   - name: Fedora
-   versions:
-   - all
+    versions:
+      - all
   #  - 16
   #  - 17
   #  - 18
