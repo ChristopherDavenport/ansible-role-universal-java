@@ -11,3 +11,7 @@ java_version: "8"
 
 # Temporary Storage Of Installation Files
 java_tmp_storage: /tmp/java_install
+
+
+# Name Of Java Home Environment Variable Script
+java_home_script_name: java_home.sh
