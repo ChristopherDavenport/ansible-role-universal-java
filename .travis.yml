@@ -142,6 +142,27 @@ env:
     init: /usr/lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
 
+allow_failures:
+  - env:
+      distro: debian8
+      version: "8"
+      type: Open
+      init: /lib/systemd/systemd
+      run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - env:
+      distro: fedora24
+      version: "8"
+      type: Open
+      init: /usr/lib/systemd/systemd
+      run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - env:
+      distro: fedora24
+      version: "7"
+      type: Open
+      init: /usr/lib/systemd/systemd
+      run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+
+
 before_install:
   # Pull container.
   - 'docker pull geerlingguy/docker-${distro}-ansible:latest'
