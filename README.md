@@ -23,6 +23,19 @@ Options are 7 or 8 for Oracle and 7, 8 or 9 for Open
 java_version: "8"
 ```
 
+Whether Or Not To Install a script that will set JAVA_HOME environment
+variable
+
+```
+java_home_install_script: True
+```
+
+Name of the script that will be placed into /etc/profile.d/
+
+```
+java_home_script_name: java_home.sh
+```
+
 Temporary Storage Location
 
 ```

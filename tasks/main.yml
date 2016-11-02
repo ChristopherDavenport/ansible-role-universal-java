@@ -32,7 +32,6 @@
   command: /usr/bin/java -version
   register: __java_version
   changed_when: False
-  ignore_errors: True
 
 - debug: var=__java_version
 
@@ -40,7 +39,6 @@
   command: "{{ __java_home}}/bin/java -version"
   register: __java_home_version
   changed_when: False
-  ignore_errors: True
 
 - debug: var=__java_home_version
 
@@ -48,4 +46,4 @@
   template:
     src: java_home.sh.j2
     dest: "/etc/profile.d/{{ java_home_script_name }}"
-  when: __java_home is defined
+  when: java_home_script_install
