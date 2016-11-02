@@ -1,5 +1,11 @@
 ---
 
+- name: Create Temporary Storage Folder
+  file:
+    path: "{{ java_tmp_storage }}"
+    state: directory
+  when: java_type == "Oracle"
+
 - name: Download Oracle Java 8 RPM
   get_url:
     url: "{{ __java_oracle_8_download }}"
@@ -10,7 +16,7 @@
     - java_version == "8"
 
 - name: Install Oracle Java8
-  yum:
+  package:
     name: "{{ java_tmp_storage }}/{{ __java_oracle_8_rpm }}.rpm"
     state: installed
   when:
@@ -27,7 +33,7 @@
     - java_version == "7"
 
 - name: Install Oracle Java 7
-  yum:
+  package:
     name: "{{ java_tmp_storage }}/{{ __java_oracle_7_rpm }}.rpm"
     state: installed
   when:

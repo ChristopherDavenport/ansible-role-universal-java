@@ -1,1 +1,49 @@
 ---
+
+- name: Create Temporary Storage Folder
+  file:
+    path: "{{ java_tmp_storage }}"
+    state: directory
+  when: java_type == "Oracle"
+
+- name: Create Future Java Directory
+  file:
+    path: /usr/java
+    state: directory
+  when: java_type == "Oracle"
+
+- name: Download Oracle Java 8 Tar
+  get_url:
+    url: "{{ __java_oracle_8_download }}"
+    headers: 'Cookie:oraclelicense=accept-secure-backup-cookie'
+    dest: "{{ java_tmp_storage }}/{{ __java_oracle_8_tar }}"
+  when:
+    - java_type == "Oracle"
+    - java_version == "8"
+
+- name: Unpack Oracle Java 8 Tar
+  unarchive:
+    remote_src: yes
+    src: "{{ java_tmp_storage }}/{{ __java_oracle_8_tar }}"
+    dest: /usr/java
+  when:
+    - java_type == "Oracle"
+    - java_version == "8"
+
+- name: Download Oracle Java 7 Tar
+  get_url:
+    url: "{{ __java_oracle_7_download }}"
+    headers: 'Cookie:oraclelicense=accept-secure-backup-cookie'
+    dest: "{{ java_tmp_storage }}/{{ __java_oracle_7_tar }}"
+  when:
+    - java_type == "Oracle"
+    - java_version == "7"
+
+- name: Unpack Oracle Java 7 Tar
+  unarchive:
+    remote_src: yes
+    src: "{{ java_tmp_storage }}/{{ __java_oracle_7_tar }}"
+    dest: /usr/java
+  when:
+    - java_type == "Oracle"
+    - java_version == "7"

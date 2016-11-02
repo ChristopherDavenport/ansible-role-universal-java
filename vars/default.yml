@@ -1,1 +1,9 @@
 ---
+
+__java_oracle_7_download: http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.tar.gz
+__java_oracle_8_download: http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-x64.tar.gz
+
+__java_oracle_7_tar: jdk-7u79-linux-x64.tar.gz
+__java_oracle_8_tar: jdk-8u111-linux-x64.tar.gz
+
+__java_home_base: /usr/java/

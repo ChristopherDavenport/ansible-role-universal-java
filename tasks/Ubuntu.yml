@@ -1,0 +1,38 @@
+---
+
+- name: Configure local repository to trust the webupd8 Oracle java ppa
+  apt_repository:
+    repo: "ppa:webupd8team/java"
+    state: present
+    update_cache: yes
+  when: java_type == "Oracle"
+
+- name: Accept Oracle Java license
+  debconf:
+    name: "oracle-java{{ java_version }}-installer"
+    question: shared/accepted-oracle-license-v1-1
+    value: "true"
+    vtype: select
+  when: java_type == "Oracle"
+
+- name: Install Oracle Java
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "oracle-java{{ java_version }}-installer"
+    - "oracle-java{{ java_version }}-set-default"
+  when: java_type == "Oracle"
+
+- name: Configure local repository to trust the OpenJdk PPA
+  apt_repository:
+    repo: "ppa:openjdk-r/ppa"
+    state: present
+    update_cache: yes
+  when: java_type == "Open"
+
+- name: Install Open Java
+  apt:
+    name: "openjdk-{{ java_version }}-jdk"
+    state: present
+  when: java_type == "Open"

@@ -1,35 +1,52 @@
 ---
 
-- name: Configure local repository to trust the webupd8 Oracle java ppa
-  apt_repository:
-    repo: "ppa:webupd8team/java"
-    state: present
-    update_cache: yes
+- name: Create Temporary Storage Folder
+  file:
+    path: "{{ java_tmp_storage }}"
+    state: directory
   when: java_type == "Oracle"
 
-- name: Accept Oracle Java license
-  debconf:
-    name: "oracle-java{{ java_version }}-installer"
-    question: shared/accepted-oracle-license-v1-1
-    value: "true"
-    vtype: select
+- name: Create Future Java Directory
+  file:
+    path: /usr/java
+    state: directory
   when: java_type == "Oracle"
 
-- name: Install Oracle Java
-  apt:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - "oracle-java{{ java_version }}-installer"
-    - "oracle-java{{ java_version }}-set-default"
-  when: java_type == "Oracle"
+- name: Download Oracle Java 8 Tar
+  get_url:
+    url: "{{ __java_oracle_8_download }}"
+    headers: 'Cookie:oraclelicense=accept-secure-backup-cookie'
+    dest: "{{ java_tmp_storage }}/{{ __java_oracle_8_tar }}"
+  when:
+    - java_type == "Oracle"
+    - java_version == "8"
 
-- name: Configure local repository to trust the OpenJdk PPA
-  apt_repository:
-    repo: "ppa:openjdk-r/ppa"
-    state: present
-    update_cache: yes
-  when: java_type == "Open"
+- name: Unpack Oracle Java 8 Tar
+  unarchive:
+    remote_src: yes
+    src: "{{ java_tmp_storage }}/{{ __java_oracle_8_tar }}"
+    dest: /usr/java
+  when:
+    - java_type == "Oracle"
+    - java_version == "8"
+
+- name: Download Oracle Java 7 Tar
+  get_url:
+    url: "{{ __java_oracle_7_download }}"
+    headers: 'Cookie:oraclelicense=accept-secure-backup-cookie'
+    dest: "{{ java_tmp_storage }}/{{ __java_oracle_7_tar }}"
+  when:
+    - java_type == "Oracle"
+    - java_version == "7"
+
+- name: Unpack Oracle Java 7 Tar
+  unarchive:
+    remote_src: yes
+    src: "{{ java_tmp_storage }}/{{ __java_oracle_7_tar }}"
+    dest: /usr/java
+  when:
+    - java_type == "Oracle"
+    - java_version == "7"
 
 - name: Install Open Java
   apt:
