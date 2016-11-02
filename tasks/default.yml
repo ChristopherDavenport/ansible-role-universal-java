@@ -17,6 +17,7 @@
     url: "{{ __java_oracle_8_download }}"
     headers: 'Cookie:oraclelicense=accept-secure-backup-cookie'
     dest: "{{ java_tmp_storage }}/{{ __java_oracle_8_tar }}"
+    checksum: "{{ __java_oracle_8_download_checksum }}"
   when:
     - java_type == "Oracle"
     - java_version == "8"
@@ -30,11 +31,30 @@
     - java_type == "Oracle"
     - java_version == "8"
 
+- name: Create a Link For Java 8 Latest
+  file:
+    state: link
+    dest: /usr/java/latest
+    src: "/usr/java/{{ __java_oracle_8_directory }}"
+  when:
+    - java_type == "Oracle"
+    - java_version == "8"
+
+- name: Create a Link For Java 8 Default
+  file:
+    state: link
+    dest: /usr/java/default
+    src: "/usr/java/{{ __java_oracle_8_directory }}"
+  when:
+    - java_type == "Oracle"
+    - java_version == "8"
+
 - name: Download Oracle Java 7 Tar
   get_url:
     url: "{{ __java_oracle_7_download }}"
     headers: 'Cookie:oraclelicense=accept-secure-backup-cookie'
     dest: "{{ java_tmp_storage }}/{{ __java_oracle_7_tar }}"
+    checksum: "{{ __java_oracle_7_download_checksum }}"
   when:
     - java_type == "Oracle"
     - java_version == "7"
@@ -47,3 +67,35 @@
   when:
     - java_type == "Oracle"
     - java_version == "7"
+
+- name: Create a Link For Java 7 Latest
+  file:
+    state: link
+    dest: /usr/java/latest
+    src: "/usr/java/{{ __java_oracle_7_directory }}"
+  when:
+    - java_type == "Oracle"
+    - java_version == "8"
+
+- name: Create a Link For Java 7 Default
+  file:
+    state: link
+    dest: /usr/java/default
+    src: "/usr/java/{{ __java_oracle_7_directory }}"
+  when:
+    - java_type == "Oracle"
+    - java_version == "7"
+
+- name: Create Links to Bin Directory for Java
+  file:
+    state: link
+    follow: yes
+    dest: "/usr/bin/{{ item }}"
+    src: "/usr/java/latest/bin/{{ item }}"
+  with_items:
+    - java
+    - javaws
+    - jcontrol
+    - javac
+    - jar
+    - javadoc

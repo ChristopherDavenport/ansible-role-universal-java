@@ -26,3 +26,17 @@
   changed_when: False
 
 - debug: var=__java_find
+
+- name: Check Java Version
+  command: /usr/bin/java -version
+  register: __java_version
+  changed_when: False
+  ignore_errors: True
+
+- debug: var=__java_version
+
+- name: Set Java Home Environmental Variables
+  template:
+    src: java_home.sh.j2
+    dest: "/etc/profile.d/{{ java_home_script_name }}"
+  when: __java_home is defined
