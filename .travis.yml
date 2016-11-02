@@ -142,9 +142,6 @@ env:
     init: /usr/lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
 
-allow_failures:
-  
-
 before_install:
   # Pull container.
   - 'docker pull geerlingguy/docker-${distro}-ansible:latest'

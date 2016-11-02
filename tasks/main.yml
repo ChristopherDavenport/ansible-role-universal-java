@@ -35,6 +35,14 @@
 
 - debug: var=__java_version
 
+- name: Check Java Home Version
+  command: "{{ __java_home}}/bin/java -version"
+  register: __java_home_version
+  changed_when: False
+  ignore_errors: True
+
+- debug: var=__java_home_version
+
 - name: Set Java Home Environmental Variables
   template:
     src: java_home.sh.j2
