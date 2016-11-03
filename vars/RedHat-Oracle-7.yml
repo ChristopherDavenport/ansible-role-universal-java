@@ -1,0 +1,7 @@
+---
+
+__java_oracle_rpm: java7u79
+__java_oracle_download: http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.rpm
+__java_oracle_download_checksum: md5:8486da4cdc4123f5c4f080d279f07712
+
+__java_home: /usr/lib/jvm/java-7-oracle/

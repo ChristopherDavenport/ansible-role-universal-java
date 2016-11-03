@@ -12,79 +12,34 @@
     state: directory
   when: java_type == "Oracle"
 
-- name: Download Oracle Java 8 Tar
+- name: Download Oracle Java Tar
   get_url:
-    url: "{{ __java_oracle_8_download }}"
+    url: "{{ __java_oracle_download }}"
     headers: 'Cookie:oraclelicense=accept-secure-backup-cookie'
-    dest: "{{ java_tmp_storage }}/{{ __java_oracle_8_tar }}"
-    checksum: "{{ __java_oracle_8_download_checksum }}"
-  when:
-    - java_type == "Oracle"
-    - java_version == "8"
+    dest: "{{ java_tmp_storage }}/{{ __java_oracle_tar }}"
+    checksum: "{{ __java_oracle_download_checksum }}"
+  when: java_type == "Oracle"
 
-- name: Unpack Oracle Java 8 Tar
+- name: Unpack Oracle Java Tar
   unarchive:
     remote_src: yes
-    src: "{{ java_tmp_storage }}/{{ __java_oracle_8_tar }}"
+    src: "{{ java_tmp_storage }}/{{ __java_oracle_tar }}"
     dest: /usr/java
-  when:
-    - java_type == "Oracle"
-    - java_version == "8"
+  when: java_type == "Oracle"
 
-- name: Create a Link For Java 8 Latest
+- name: Create a Link For Java Latest
   file:
     state: link
     dest: /usr/java/latest
-    src: "/usr/java/{{ __java_oracle_8_directory }}"
-  when:
-    - java_type == "Oracle"
-    - java_version == "8"
+    src: "/usr/java/{{ __java_oracle_directory }}"
+  when: java_type == "Oracle"
 
-- name: Create a Link For Java 8 Default
+- name: Create a Link For Java Default
   file:
     state: link
     dest: /usr/java/default
-    src: "/usr/java/{{ __java_oracle_8_directory }}"
-  when:
-    - java_type == "Oracle"
-    - java_version == "8"
-
-- name: Download Oracle Java 7 Tar
-  get_url:
-    url: "{{ __java_oracle_7_download }}"
-    headers: 'Cookie:oraclelicense=accept-secure-backup-cookie'
-    dest: "{{ java_tmp_storage }}/{{ __java_oracle_7_tar }}"
-    checksum: "{{ __java_oracle_7_download_checksum }}"
-  when:
-    - java_type == "Oracle"
-    - java_version == "7"
-
-- name: Unpack Oracle Java 7 Tar
-  unarchive:
-    remote_src: yes
-    src: "{{ java_tmp_storage }}/{{ __java_oracle_7_tar }}"
-    dest: /usr/java
-  when:
-    - java_type == "Oracle"
-    - java_version == "7"
-
-- name: Create a Link For Java 7 Latest
-  file:
-    state: link
-    dest: /usr/java/latest
-    src: "/usr/java/{{ __java_oracle_7_directory }}"
-  when:
-    - java_type == "Oracle"
-    - java_version == "8"
-
-- name: Create a Link For Java 7 Default
-  file:
-    state: link
-    dest: /usr/java/default
-    src: "/usr/java/{{ __java_oracle_7_directory }}"
-  when:
-    - java_type == "Oracle"
-    - java_version == "7"
+    src: "/usr/java/{{ __java_oracle_directory }}"
+  when: java_type == "Oracle"
 
 - name: Create Links to Bin Directory for Java
   file:
@@ -99,3 +54,4 @@
     - javac
     - jar
     - javadoc
+  when: java_type == "Oracle"
