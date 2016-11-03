@@ -31,11 +31,11 @@ env:
     type: Open
     init: /lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distro: fedora24
-    version: "8"
-    type: Open
-    init: /usr/lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  # - distro: fedora24
+  #   version: "8"
+  #   type: Open
+  #   init: /usr/lib/systemd/systemd
+    # run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - distro: centos7
     version: "7"
     type: Open
@@ -66,11 +66,11 @@ env:
     type: Open
     init: /lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distro: fedora24
-    version: "7"
-    type: Open
-    init: /usr/lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  # - distro: fedora24
+  #   version: "7"
+  #   type: Open
+  #   init: /usr/lib/systemd/systemd
+  #   run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - distro: centos7
     version: "8"
     type: Oracle
@@ -101,11 +101,11 @@ env:
     type: Oracle
     init: /lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distro: fedora24
-    version: "8"
-    type: Oracle
-    init: /usr/lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  # - distro: fedora24
+  #   version: "8"
+  #   type: Oracle
+  #   init: /usr/lib/systemd/systemd
+  #   run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - distro: centos7
     version: "7"
     type: Oracle
@@ -136,11 +136,11 @@ env:
     type: Oracle
     init: /lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distro: fedora24
-    version: "7"
-    type: Oracle
-    init: /usr/lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  # - distro: fedora24
+  #   version: "7"
+  #   type: Oracle
+  #   init: /usr/lib/systemd/systemd
+  #   run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
 
 allow_failures:
   env:

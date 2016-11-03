@@ -4,7 +4,6 @@
   apt:
     name: "openjdk-{{ java_version }}-jdk"
     state: present
-    update_cache: yes
   when: java_type == "Open"
 
 - include: default.yml
