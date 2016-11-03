@@ -1,0 +1,6 @@
+---
+
+- name: Fedora Follows Default For Oracle
+  include: default.yml
+  static: yes
+  when: java_type == "Oracle"
