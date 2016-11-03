@@ -25,3 +25,11 @@
     name: "{{ __java_open_package }}"
     state: installed
   when: java_type == "Open"
+
+- name: Check For Installed jvm
+  command: /usr/bin/ls /usr/lib/jvm
+  register: __java_redhat_open
+  when: java_type == "Open"
+
+- debug: var=__java_redhat_open
+  when: java_type == "Open"

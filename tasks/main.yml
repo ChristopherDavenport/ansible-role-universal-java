@@ -21,7 +21,7 @@
     - "vars/{{ ansible_os_family }}.yml"
 
     - "vars/default-{{ java_type }}-{{ java_version }}.yml"
-    - "vars/default-{{ java_type }}.yml"    
+    - "vars/default-{{ java_type }}.yml"
     - "vars/default.yml"
 
 - name: Include Steps For Installation
@@ -45,12 +45,12 @@
 - name: Check Java Version
   command: /usr/bin/java -version
   register: __java_version
-  changed_when: False
+  changed_when: Fals
 
 - debug: var=__java_version
 
 - name: Check Java Home Version
-  command: "{{ __java_home}}/bin/java -version"
+  command: "{{ __java_home }}/bin/java -version"
   register: __java_home_version
   changed_when: False
 
