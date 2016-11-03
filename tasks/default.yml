@@ -12,6 +12,12 @@
     state: directory
   when: java_type == "Oracle"
 
+- name: Ensure Tar Is Installed
+  package:
+    name: tar
+    state: installed
+  when: java_type == "Oracle"
+
 - name: Download Oracle Java Tar
   get_url:
     url: "{{ __java_oracle_download }}"
