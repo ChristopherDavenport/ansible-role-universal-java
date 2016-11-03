@@ -45,7 +45,7 @@
 - name: Check Java Version
   command: /usr/bin/java -version
   register: __java_version
-  changed_when: Fals
+  changed_when: False
 
 - debug: var=__java_version
 
