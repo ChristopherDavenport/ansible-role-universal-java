@@ -4,4 +4,4 @@ __java_oracle_rpm: java8u112
 __java_oracle_download: http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-x64.rpm
 __java_oracle_download_checksum: md5:25b37dc93828cc24e2c246cf6f4a5aac
 
-__java_home: /usr/lib/jvm/java-8-oracle
+__java_home: /usr/java/latest

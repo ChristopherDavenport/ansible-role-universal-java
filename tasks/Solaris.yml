@@ -1,0 +1,7 @@
+---
+
+- name: Install Oracle Package
+  package:
+    name: "{{ __java_oracle_package }}"
+    state: installed
+  when: java_type == "Oracle"
