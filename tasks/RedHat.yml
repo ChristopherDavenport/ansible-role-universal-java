@@ -29,6 +29,8 @@
 - name: Check For Installed jvm
   command: /usr/bin/ls /usr/lib/jvm
   register: __java_redhat_open
+  changed_when: False
+  ignore_errors: True
   when: java_type == "Open"
 
 - debug: var=__java_redhat_open
