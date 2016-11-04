@@ -30,13 +30,3 @@
   pause:
     seconds: 10
   when: java_type == "Open"
-
-- name: Check For Installed jvm
-  command: /usr/bin/env ls -lah /usr/lib/jvm
-  register: __java_redhat_open
-  changed_when: False
-  ignore_errors: True
-  when: java_type == "Open"
-
-- debug: var=__java_redhat_open
-  when: java_type == "Open"

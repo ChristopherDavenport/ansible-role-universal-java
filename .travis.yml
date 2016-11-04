@@ -26,11 +26,11 @@ env:
     type: Open
     init: /sbin/init
     run_opts: ""
-  - distro: debian8
-    version: "8"
-    type: Open
-    init: /lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  # - distro: debian8
+  #   version: "8"
+  #   type: Open
+  #   init: /lib/systemd/systemd
+  #   run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
   # - distro: fedora24
   #   version: "8"
   #   type: Open
