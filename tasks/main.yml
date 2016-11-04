@@ -34,27 +34,16 @@
     - "{{ ansible_os_family }}.yml"
     - "default.yml"
 
-- name: Check for Java
-  command: /usr/bin/find / -name "java"
-  register: __java_find
-  ignore_errors: True
-  changed_when: False
-
-- debug: var=__java_find
-
 - name: Check Java Version
   command: /usr/bin/java -version
-  register: __java_version
+  register: java_version
   changed_when: False
 
-- debug: var=__java_version
 
 - name: Check Java Home Version
-  command: "{{ __java_home }}/bin/java -version"
+  command: "{{ java_home }}/bin/java -version"
   register: __java_home_version
   changed_when: False
-
-- debug: var=__java_home_version
 
 - name: Set Java Home Environmental Variables
   template:
