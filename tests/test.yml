@@ -4,6 +4,7 @@
     - name: Update apt cache.
       apt:
         update_cache: yes
+      changed_when: false
       when: ansible_os_family == 'Debian'
   roles:
     - role_under_test
