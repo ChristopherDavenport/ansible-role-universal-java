@@ -3,9 +3,7 @@
   pre_tasks:
   - name: apt update
     apt: update_cache=yes
-    register: __update_cache
-    until: not __update_cache.changed
-    retries: 5
+    changed_when: False
     ignore_errors: True
     when: ansible_os_family == 'Debian'
   roles:
