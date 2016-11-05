@@ -1,183 +1,242 @@
-services: docker
+language: python
+services:
+  - docker
 
 env:
-  - distro: centos7
-    version: "8"
-    type: Open
-    init: /usr/lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distro: centos6
-    version: "8"
-    type: Open
-    init: /sbin/init
-    run_opts: ""
-  - distro: ubuntu1604
+  - distribution: Ubuntu
+    distribution_version: yakkety
     version: "8"
     type: Open
     init: /lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distro: ubuntu1404
+  - distribution: Ubuntu
+    distribution_version: xenial
+    version: "8"
+    type: Open
+    init: /lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: Ubuntu
+    distribution_version: trusty
     version: "8"
     type: Open
     init: /sbin/init
     run_opts: ""
-  - distro: ubuntu1204
+  - distribution: Ubuntu
+    distribution_version: precise
     version: "8"
     type: Open
     init: /sbin/init
     run_opts: ""
-  # - distro: debian8
+  - distribution: EL
+    distribution_version: "7"
+    version: "8"
+    type: Open
+    init: /usr/lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: EL
+    distribution_version: "6"
+    version: "8"
+    type: Open
+    init: /sbin/init
+    run_opts: ""
+  # - distribution: EL
+  #   distribution_version: "5"
+    # version: "8"
+    # type: Open
+  #   init: /sbin/init
+  #   run_opts: ""
+  # - distribution: Debian
+  #   distribution_version: jessie
   #   version: "8"
   #   type: Open
   #   init: /lib/systemd/systemd
   #   run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  # - distro: fedora24
-  #   version: "8"
-  #   type: Open
+  # - distribution: Fedora
+  #   distribution_version: "24"
+    # version: "8"
+    # type: Open
   #   init: /usr/lib/systemd/systemd
-    # run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distro: centos7
-    version: "7"
-    type: Open
-    init: /usr/lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distro: centos6
-    version: "7"
-    type: Open
-    init: /sbin/init
-    run_opts: ""
-  - distro: ubuntu1604
-    version: "7"
-    type: Open
-    init: /lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distro: ubuntu1404
-    version: "7"
-    type: Open
-    init: /sbin/init
-    run_opts: ""
-  - distro: ubuntu1204
-    version: "7"
-    type: Open
-    init: /sbin/init
-    run_opts: ""
-  - distro: debian8
-    version: "7"
-    type: Open
-    init: /lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  # - distro: fedora24
+  #   run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  # - distribution: Ubuntu
+  #   distribution_version: yakkety
   #   version: "7"
   #   type: Open
+  #   init: /lib/systemd/systemd
+  #   run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: Ubuntu
+    distribution_version: xenial
+    version: "7"
+    type: Open
+    init: /lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: Ubuntu
+    distribution_version: trusty
+    version: "7"
+    type: Open
+    init: /sbin/init
+    run_opts: ""
+  - distribution: Ubuntu
+    distribution_version: precise
+    version: "7"
+    type: Open
+    init: /sbin/init
+    run_opts: ""
+  - distribution: EL
+    distribution_version: "7"
+    version: "7"
+    type: Open
+    init: /usr/lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: EL
+    distribution_version: "6"
+    version: "7"
+    type: Open
+    init: /sbin/init
+    run_opts: ""
+  # - distribution: EL
+  #   distribution_version: "5"
+    # version: "7"
+    # type: Open
+  #   init: /sbin/init
+  #   run_opts: ""
+  - distribution: Debian
+    distribution_version: jessie
+    version: "7"
+    type: Open
+    init: /lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  # - distribution: Fedora
+  #   distribution_version: "24"
+    # version: "7"
+    # type: Open
   #   init: /usr/lib/systemd/systemd
   #   run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distro: centos7
+  - distribution: Ubuntu
+    distribution_version: yakkety
+    version: "8"
+    type: Oracle
+    init: /lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: Ubuntu
+    distribution_version: xenial
+    version: "8"
+    type: Oracle
+    init: /lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: Ubuntu
+    distribution_version: trusty
+    version: "8"
+    type: Oracle
+    init: /sbin/init
+    run_opts: ""
+  - distribution: Ubuntu
+    distribution_version: precise
+    version: "8"
+    type: Oracle
+    init: /sbin/init
+    run_opts: ""
+  - distribution: EL
+    distribution_version: "7"
     version: "8"
     type: Oracle
     init: /usr/lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distro: centos6
+  - distribution: EL
+    distribution_version: "6"
     version: "8"
     type: Oracle
     init: /sbin/init
     run_opts: ""
-  - distro: ubuntu1604
+  # - distribution: EL
+  #   distribution_version: "5"
+    # version: "8"
+    # type: Oracle
+  #   init: /sbin/init
+  #   run_opts: ""
+  - distribution: Debian
+    distribution_version: jessie
     version: "8"
     type: Oracle
     init: /lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distro: ubuntu1404
-    version: "8"
-    type: Oracle
-    init: /sbin/init
-    run_opts: ""
-  - distro: ubuntu1204
-    version: "8"
-    type: Oracle
-    init: /sbin/init
-    run_opts: ""
-  - distro: debian8
-    version: "8"
-    type: Oracle
-    init: /lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  # - distro: fedora24
-  #   version: "8"
-  #   type: Oracle
+  # - distribution: Fedora
+  #   distribution_version: "24"
+    # version: "8"
+    # type: Oracle
   #   init: /usr/lib/systemd/systemd
   #   run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distro: centos7
+  - distribution: Ubuntu
+    distribution_version: yakkety
+    version: "7"
+    type: Oracle
+    init: /lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: Ubuntu
+    distribution_version: xenial
+    version: "7"
+    type: Oracle
+    init: /lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: Ubuntu
+    distribution_version: trusty
+    version: "7"
+    type: Oracle
+    init: /sbin/init
+    run_opts: ""
+  - distribution: Ubuntu
+    distribution_version: precise
+    version: "7"
+    type: Oracle
+    init: /sbin/init
+    run_opts: ""
+  - distribution: EL
+    distribution_version: "7"
     version: "7"
     type: Oracle
     init: /usr/lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distro: centos6
+  - distribution: EL
+    distribution_version: "6"
     version: "7"
     type: Oracle
     init: /sbin/init
     run_opts: ""
-  - distro: ubuntu1604
+  # - distribution: EL
+  #   distribution_version: "5"
+    # version: "7"
+    # type: Oracle
+  #   init: /sbin/init
+  #   run_opts: ""
+  - distribution: Debian
+    distribution_version: jessie
     version: "7"
     type: Oracle
     init: /lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distro: ubuntu1404
-    version: "7"
-    type: Oracle
-    init: /sbin/init
-    run_opts: ""
-  - distro: ubuntu1204
-    version: "7"
-    type: Oracle
-    init: /sbin/init
-    run_opts: ""
-  - distro: debian8
-    version: "7"
-    type: Oracle
-    init: /lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  # - distro: fedora24
-  #   version: "7"
-  #   type: Oracle
+  # - distribution: Fedora
+  #   distribution_version: "24"
+    # version: "7"
+    # type: Oracle
   #   init: /usr/lib/systemd/systemd
   #   run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-
-allow_failures:
-  env:
-    - distro: debian8
-      version: "8"
-      type: Open
-      init: /lib/systemd/systemd
-      run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-    - distro: fedora24
-      version: "8"
-      type: Open
-      init: /usr/lib/systemd/systemd
-      run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-    - distro: fedora24
-      version: "7"
-      type: Open
-      init: /usr/lib/systemd/systemd
-      run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-
 
 before_install:
   # Pull container.
-  - 'docker pull geerlingguy/docker-${distro}-ansible:latest'
+  - 'docker pull ansiblecheck/ansiblecheck:${distribution,,}-${distribution_version}'
 
 script:
   - container_id=$(mktemp)
 
-  # Run container in detached state.
-  - 'docker run --detach --volume="${PWD}":/etc/ansible/roles/role_under_test:ro ${run_opts} geerlingguy/docker-${distro}-ansible:latest "${init}" > "${container_id}"'
+  # Start The Built Container In The Background
+  - 'docker run --detach --volume="${PWD}":/etc/ansible/roles/role_under_test:ro ${run_opts} ansiblecheck/ansiblecheck:"${distribution,,}"-"${distribution_version}" "${init}" > "${container_id}"'
 
   # Ansible syntax check.
   - 'docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-playbook /etc/ansible/roles/role_under_test/tests/test.yml --syntax-check'
 
   # Test role.
-  - 'docker exec "$(cat ${container_id})" ansible-playbook /etc/ansible/roles/role_under_test/tests/test.yml --extra-vars "java_version=${version} java_type=${type}" -v'
+  - 'docker exec "$(cat ${container_id})" ansible-playbook /etc/ansible/roles/role_under_test/tests/test.yml --extra-vars "java_version=${version} java_type=${type}" '
 
-  # Test role idempotence.
+  # Test Idempotence
   - idempotence=$(mktemp)
   - docker exec "$(cat ${container_id})" ansible-playbook /etc/ansible/roles/role_under_test/tests/test.yml --extra-vars "java_version=${version} java_type=${type}" | tee -a ${idempotence}
   - >
