@@ -39,12 +39,6 @@ env:
     type: Open
     init: /sbin/init
     run_opts: ""
-  # - distribution: EL
-  #   distribution_version: "5"
-    # version: "8"
-    # type: Open
-  #   init: /sbin/init
-  #   run_opts: ""
   # - distribution: Debian
   #   distribution_version: jessie
   #   version: "8"
@@ -99,12 +93,6 @@ env:
     type: Open
     init: /sbin/init
     run_opts: ""
-  # - distribution: EL
-  #   distribution_version: "5"
-    # version: "7"
-    # type: Open
-  #   init: /sbin/init
-  #   run_opts: ""
   - distribution: Debian
     distribution_version: jessie
     version: "7"
@@ -159,12 +147,6 @@ env:
     type: Oracle
     init: /sbin/init
     run_opts: ""
-  # - distribution: EL
-  #   distribution_version: "5"
-    # version: "8"
-    # type: Oracle
-  #   init: /sbin/init
-  #   run_opts: ""
   - distribution: Debian
     distribution_version: jessie
     version: "8"
@@ -176,7 +158,7 @@ env:
     version: "8"
     type: Oracle
     init: /usr/lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"i
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - distribution: Fedora
     distribution_version: "23"
     version: "8"
@@ -219,12 +201,6 @@ env:
     type: Oracle
     init: /sbin/init
     run_opts: ""
-  # - distribution: EL
-  #   distribution_version: "5"
-    # version: "7"
-    # type: Oracle
-  #   init: /sbin/init
-  #   run_opts: ""
   - distribution: Debian
     distribution_version: jessie
     version: "7"
