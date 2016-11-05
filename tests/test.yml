@@ -1,10 +1,12 @@
 ---
 - hosts: localhost
   pre_tasks:
-    - name: Update apt cache.
-      apt:
-        update_cache: yes
-      changed_when: false
-      when: ansible_os_family == 'Debian'
+  - name: apt update
+    apt: update_cache=yes cache_valid_time=3600
+    register: apt_result
+    until: apt_result|success and not apt_result.changed
+    retries: 3
+    delay: 1
+    when: ansible_os_family == 'Debian'
   roles:
     - role_under_test
