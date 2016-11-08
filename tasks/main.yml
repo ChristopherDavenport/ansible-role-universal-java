@@ -36,9 +36,8 @@
 
 - name: Check Java Version
   command: /usr/bin/java -version
-  register: java_version
+  register: __java_version
   changed_when: False
-
 
 - name: Check Java Home Version
   command: "{{ java_home }}/bin/java -version"
