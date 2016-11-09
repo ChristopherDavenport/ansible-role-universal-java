@@ -40,7 +40,7 @@ env:
     init: /sbin/init
     run_opts: ""
   - distribution: Debian
-    distribution_version: jessie
+    distribution_version: stretch
     version: "8"
     type: Open
     init: /lib/systemd/systemd
@@ -51,6 +51,12 @@ env:
     type: Open
     init: /lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: Debian
+    distribution_version: wheezy
+    version: "8"
+    type: Open
+    init: /sbin/init
+    run_opts: ""
   - distribution: Fedora
     distribution_version: "24"
     version: "8"
@@ -100,11 +106,23 @@ env:
     init: /sbin/init
     run_opts: ""
   - distribution: Debian
+    distribution_version: stretch
+    version: "7"
+    type: Open
+    init: /lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: Debian
     distribution_version: jessie
     version: "7"
     type: Open
     init: /lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: Debian
+    distribution_version: wheezy
+    version: "7"
+    type: Open
+    init: /sbin/init
+    run_opts: ""
   # - distribution: Fedora
   #   distribution_version: "24"
   #   version: "7"
@@ -154,11 +172,23 @@ env:
     init: /sbin/init
     run_opts: ""
   - distribution: Debian
+    distribution_version: stretch
+    version: "8"
+    type: Oracle
+    init: /lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: Debian
     distribution_version: jessie
     version: "8"
     type: Oracle
     init: /lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: Debian
+    distribution_version: wheezy
+    version: "8"
+    type: Oracle
+    init: /sbin/init
+    run_opts: ""
   - distribution: Fedora
     distribution_version: "24"
     version: "8"
@@ -208,11 +238,23 @@ env:
     init: /sbin/init
     run_opts: ""
   - distribution: Debian
+    distribution_version: stretch
+    version: "7"
+    type: Oracle
+    init: /lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: Debian
     distribution_version: jessie
     version: "7"
     type: Oracle
     init: /lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: Debian
+    distribution_version: wheezy
+    version: "7"
+    type: Oracle
+    init: /sbin/init
+    run_opts: ""
   - distribution: Fedora
     distribution_version: "24"
     version: "7"
