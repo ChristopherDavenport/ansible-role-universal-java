@@ -5,7 +5,7 @@ galaxy_info:
 
   license: MIT
 
-  min_ansible_version: 2.0
+  min_ansible_version: 2.2
 
   # min_ansible_container_version:
   # github_branch:
@@ -41,6 +41,5 @@ galaxy_info:
     - system
     - installer
     - tools
-    - multi-system
 
 dependencies: []
