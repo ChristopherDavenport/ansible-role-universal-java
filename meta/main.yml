@@ -41,5 +41,6 @@ galaxy_info:
     - system
     - installer
     - tools
+    - multi-system
 
 dependencies: []
