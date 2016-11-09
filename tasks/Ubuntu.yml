@@ -29,6 +29,7 @@
     repo: "ppa:openjdk-r/ppa"
     state: present
     update_cache: yes
+  ignore_errors: true
   when: java_type == "Open"
 
 - name: Install Open Java
