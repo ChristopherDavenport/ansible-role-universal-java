@@ -45,12 +45,6 @@ env:
   #   type: Open
   #   init: /lib/systemd/systemd
   #   run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distribution: Debian
-    distribution_version: jessie
-    version: "8"
-    type: Open
-    init: /lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
   - distribution: Fedora
     distribution_version: "24"
     version: "8"
