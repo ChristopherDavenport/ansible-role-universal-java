@@ -1,11 +1,13 @@
 ---
 
 - name: Install Open Java
-  apt:
+  package:
     name: "{{ item }}"
     state: present
   with_items:
+    - "openjdk-{{ java_version }}-jre-headless"
     - "openjdk-{{ java_version}}-jre"
+    - "openjdk-{{ java_version}}-jdk-headless"
     - "openjdk-{{ java_version }}-jdk"
   when: java_type == "Open"
 
