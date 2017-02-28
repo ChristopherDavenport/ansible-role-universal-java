@@ -2,8 +2,11 @@
 
 - name: Install Open Java
   apt:
-    name: "openjdk-{{ java_version }}-jdk"
+    name: "{{ item }}"
     state: present
+  with_items:
+    - "openjdk-{{ java_version}}-jre"
+    - "openjdk-{{ java_version }}-jdk"
   when: java_type == "Open"
 
 - include: default.yml
