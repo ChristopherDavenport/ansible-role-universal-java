@@ -1,13 +1,22 @@
 ---
 
-- name: Install Open Java
+- name: Install Open Java Headless
   package:
     name: "{{ item }}"
     state: present
   with_items:
     - "openjdk-{{ java_version }}-jre-headless"
-    - "openjdk-{{ java_version}}-jre"
     - "openjdk-{{ java_version}}-jdk-headless"
+  when:
+    - java_type == "Open"
+    - java_version == "8"
+
+- name: Install Open Java
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "openjdk-{{ java_version}}-jre"
     - "openjdk-{{ java_version }}-jdk"
   when: java_type == "Open"
 
