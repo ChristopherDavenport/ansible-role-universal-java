@@ -57,6 +57,18 @@ env:
     type: Open
     init: /usr/lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: OracleLinux
+    distribution_version: "7"
+    version: "8"
+    type: Open
+    init: /usr/lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: OracleLinux
+    distribution_version: "6"
+    version: "8"
+    type: Open
+    init: /sbin/init
+    run_opts: ""
   # - distribution: Ubuntu
   #   distribution_version: yakkety
   #   version: "7"
@@ -111,6 +123,18 @@ env:
   #   type: Open
   #   init: /usr/lib/systemd/systemd
   #   run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: OracleLinux
+    distribution_version: "7"
+    version: "7"
+    type: Open
+    init: /usr/lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: OracleLinux
+    distribution_version: "6"
+    version: "7"
+    type: Open
+    init: /sbin/init
+    run_opts: ""
   - distribution: Ubuntu
     distribution_version: yakkety
     version: "8"
@@ -165,6 +189,18 @@ env:
     type: Oracle
     init: /usr/lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: OracleLinux
+    distribution_version: "7"
+    version: "8"
+    type: Oracle
+    init: /usr/lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: OracleLinux
+    distribution_version: "6"
+    version: "8"
+    type: Oracle
+    init: /sbin/init
+    run_opts: ""
   - distribution: Ubuntu
     distribution_version: yakkety
     version: "7"
@@ -219,6 +255,18 @@ env:
     type: Oracle
     init: /usr/lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: OracleLinux
+    distribution_version: "7"
+    version: "7"
+    type: Oracle
+    init: /usr/lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  - distribution: OracleLinux
+    distribution_version: "6"
+    version: "7"
+    type: Oracle
+    init: /sbin/init
+    run_opts: ""
 
 before_install:
   # Pull container.
