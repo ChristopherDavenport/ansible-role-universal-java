@@ -63,7 +63,7 @@
   when: java_type == "Oracle"
 
 - name: Install Open Java Package
-  package:
+  zypper:
     name: "{{ __java_open_package }}"
     state: installed
   when: java_type == "Open"
