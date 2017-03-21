@@ -69,7 +69,7 @@
     state: installed
   with_items:
     - "{{ __java_open_package }}"
-    - which
+    - find
   when: java_type == "Open"
 
 - name: Wait For Install to Complete And Directory to Exist
@@ -80,8 +80,8 @@
     - __java_open_install|changed
 
 - name: Find Java
-  register: __java_which
-  shell: which java
+  register: __java_find
+  shell: find / -name "java"
 
-- name: Debug Java which
-  debug: var=__java_which
+- name: Debug Java find
+  debug: var=__java_find
