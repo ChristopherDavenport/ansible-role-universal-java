@@ -1,10 +1,10 @@
 ---
 
 - name: Echo OS Famile
-  debug: var={{ ansible_os_family }}
+  debug: var=ansible_os_family
 
 - name: Echo Distribution
-  debug: var={{ ansible_distribution }}
+  debug: var=ansible_distribution
 
 - name: Create Temporary Storage Folder
   file:
