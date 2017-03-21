@@ -1,0 +1,8 @@
+---
+
+__java_oracle_tar: jdk-7u79-linux-x64.tar.gz
+__java_oracle_download: http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.tar.gz
+__java_oracle_download_checksum: md5:9222e097e624800fdd9bfb568169ccad
+__java_oracle_directory: jdk1.7.0_79
+
+java_home: /usr/java/latest
