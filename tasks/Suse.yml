@@ -65,23 +65,6 @@
 - name: Install Open Java Package
   register: __java_open_install
   package:
-    name: "{{ item }}"
+    name: "{{ __java_open_package }}"
     state: installed
-  with_items:
-    - "{{ __java_open_package }}"
-    - find
   when: java_type == "Open"
-
-- name: Wait For Install to Complete And Directory to Exist
-  pause:
-    seconds: 10
-  when:
-    - java_type == "Open"
-    - __java_open_install|changed
-
-- name: Find Java
-  register: __java_find
-  shell: find / -name "java"
-
-- name: Debug Java find
-  debug: var=__java_find
