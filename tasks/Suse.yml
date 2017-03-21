@@ -63,7 +63,22 @@
   when: java_type == "Oracle"
 
 - name: Install Open Java Package
-  zypper:
+  register: __java_open_install
+  package:
     name: "{{ __java_open_package }}"
     state: installed
   when: java_type == "Open"
+
+- name: Wait For Install to Complete And Directory to Exist
+  pause:
+    seconds: 10
+  when:
+    - java_type == "Open"
+    - __java_open_install|changed
+
+- name: Find Java
+  register: __java_which
+  shell: which java
+
+- name: Debug Java which
+  debug: var=__java_which
