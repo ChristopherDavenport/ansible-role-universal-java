@@ -1,0 +1,5 @@
+---
+
+__java_open_package: "java-1_{{ java_version }}_0-openjdk"
+
+java_home: "/usr/lib64/jvm/java-1.{{ java_version }}.0-openjdk-1.{{ java_version }}.0/jre"
