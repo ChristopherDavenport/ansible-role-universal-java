@@ -1,8 +1,8 @@
 ---
 
-__java_oracle_tar: jdk-8u112-linux-x64.tar.gz
-__java_oracle_download: http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-x64.tar.gz
-__java_oracle_download_checksum: md5:de9b7a90f0f5a13cfcaa3b01451d0337
-__java_oracle_directory: jdk1.8.0_112
+__java_oracle_tar: jdk-8u121-linux-x64.tar.gz
+__java_oracle_download: http://download.oracle.com/otn-pub/java/jdk/8u121-b13/e9e7ea248e2c4826b92b3f075a80e441/jdk-8u121-linux-x64.tar.gz
+__java_oracle_download_checksum: md5:093e22e4f0a55420780a0e437ab9fcd4
+__java_oracle_directory: jdk1.8.0_121
 
 java_home: /usr/java/latest
