@@ -3,4 +3,4 @@
 __java_open_package: "java-1.{{ java_version }}.0-openjdk-devel"
 
 # __java_home: "/usr/lib/jvm/jre-1.{{java_version}}.0-openjdk"
-java_home: "/usr/lib/jvm/jre-openjdk"
+java_home: "/usr/lib/jvm/java-openjdk"
