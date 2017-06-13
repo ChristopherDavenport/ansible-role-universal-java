@@ -219,78 +219,7 @@ env:
     type: Oracle
     init: /usr/lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distribution: Ubuntu
-    distribution_version: yakkety
-    version: "7"
-    type: Oracle
-    init: /lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distribution: Ubuntu
-    distribution_version: xenial
-    version: "7"
-    type: Oracle
-    init: /lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distribution: Ubuntu
-    distribution_version: trusty
-    version: "7"
-    type: Oracle
-    init: /sbin/init
-    run_opts: ""
-  - distribution: Ubuntu
-    distribution_version: precise
-    version: "7"
-    type: Oracle
-    init: /sbin/init
-    run_opts: ""
-  - distribution: EL
-    distribution_version: "7"
-    version: "7"
-    type: Oracle
-    init: /usr/lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distribution: EL
-    distribution_version: "6"
-    version: "7"
-    type: Oracle
-    init: /sbin/init
-    run_opts: ""
-  - distribution: Debian
-    distribution_version: jessie
-    version: "7"
-    type: Oracle
-    init: /lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distribution: Fedora
-    distribution_version: "24"
-    version: "7"
-    type: Oracle
-    init: /usr/lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distribution: Fedora
-    distribution_version: "23"
-    version: "7"
-    type: Oracle
-    init: /usr/lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distribution: OracleLinux
-    distribution_version: "7"
-    version: "7"
-    type: Oracle
-    init: /usr/lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  - distribution: OracleLinux
-    distribution_version: "6"
-    version: "7"
-    type: Oracle
-    init: /sbin/init
-    run_opts: ""
-  - distribution: opensuse
-    distribution_version: "42.2"
-    version: "7"
-    type: Oracle
-    init: /usr/lib/systemd/systemd
-    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+
 
 before_install:
   # Pull container.
