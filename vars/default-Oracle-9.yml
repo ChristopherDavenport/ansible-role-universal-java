@@ -1,0 +1,8 @@
+---
+
+__java_oracle_tar: jdk-9+175-linux-x64.tar.gz
+__java_oracle_download: http://download.java.net/java/jdk9/archive/175/binaries/jdk-9+175_linux-x64_bin.tar.gz
+__java_oracle_download_checksum: sha256:18621c516c4f4c84b8bf65d7e7cdadd5e2ae80f16dfe9faa4ff0b7e7fb81cbd9
+__java_oracle_directory: jdk-9
+
+java_home: /usr/java/latest
