@@ -20,4 +20,4 @@
     - "openjdk-{{ java_version }}-jdk"
   when: java_type == "Open"
 
-- include: default.yml
+- import_tasks: default.yml
