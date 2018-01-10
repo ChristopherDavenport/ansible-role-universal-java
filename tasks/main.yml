@@ -25,8 +25,7 @@
     - "vars/default.yml"
 
 - name: Include Steps For Installation
-  include: "{{ os_item }}"
-  static: no
+  include_tasks: "{{ os_item }}"
   with_first_found:
     - "{{ ansible_os_family }}-{{ ansible_distribution_major_version }}.yml"
     - "{{ ansible_distribution }}-{{ ansible_distribution_version }}.yml"
